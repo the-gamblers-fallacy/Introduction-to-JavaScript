@@ -116,10 +116,6 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-hungryDog(15, 1);
-console.log(hungryDog(15, 0.9));
-console.log(15 * 0.04);
-
 function hungryDog(weight, age){
   if (age < 1) {
     if (age <= 4/12) {
@@ -168,7 +164,6 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 */
 
 const computer = Math.floor(Math.random() * 3);
-let user;
 
 function game(user = 0, computer){
   // rock = 0, paper = 1, scissors = 2
