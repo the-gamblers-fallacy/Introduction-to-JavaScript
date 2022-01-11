@@ -165,8 +165,32 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-  /*add your code here*/
+const computer = Math.floor(Math.random() * 3);
+let user;
+
+function game(user = 0, computer){
+  // rock = 0, paper = 1, scissors = 2
+  // put those into an arrary and convert answers into numbers based on their index
+  const choices = ['rock', 'paper', 'scissors'];
+  user = choices.indexOf(user);
+  computer = choices.indexOf(computer);
+
+  // decide who wins
+  if (user === computer) {
+    return "it's a tie";
+  }
+  if (user < computer) {
+    if (computer - user === 1) {
+      return "you lose!";
+    }
+    // if the above case isn't true and there isn't a tie, user wins
+    return "you win!";
+  }
+  if (user - computer === 1) {
+    return "you win!";
+  }
+  // if every case up to this point doesn't run, computer wins
+  return "you lose!";
 }
 
 
